@@ -24,4 +24,4 @@ $('#ch4form').submit(function(event) {
     if (validInput) {
         event.preventDefault();
     }
-});
+}, false);
