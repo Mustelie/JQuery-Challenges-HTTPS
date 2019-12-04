@@ -1,27 +1,28 @@
 $('#ch4form').submit(function(event) {
     var validInput = true;
-    var name = $("#fullname")
-    var address = $("#streetaddr")
-    // console.log("Here");
-    console.log(name);
-    console.log(address);
-    if (name.value.length =! 0){
-        $("#nameerrormsg").attr('display', "block"); 
-        console.log("no value");
+    if ($("#fullname").val().length == 0){
+        $("#nameerrormsg").attr('style', 'display: block;'); 
+        console.log("name");
         validInput = false;
     }
     else {
-        $("#nameerrormsg").attr('display', "none");
+        $("#nameerrormsg").attr('style', 'display: none;');
+
     }
 
-    if (address.value.length =! 0){
-        $("#addrerrormsg").attr('display', "block"); 
+    if ($("#streetaddr").val().length == 0){
+        $("#addrerrormsg").attr('style', 'display: block;'); 
+        console.log("street");
         validInput = false;
     }
     else {
-        $("#addrerrormsg").attr('display', "none"); 
+        $("#addrerrormsg").attr('style', 'display: none;'); 
     }
-    if (validInput) {
+    if (validInput == false) {
+        console.log("not valid");
         event.preventDefault();
     }
-}, false);
+    else {
+        console.log("valid");
+    }
+});
